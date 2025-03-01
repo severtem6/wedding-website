@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наша Свадьба</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <a href="#home">Главная</a>
+                <a href="#gallery">Фотографии</a>
+                <a href="#venue">Место проведения</a>
+                <a href="#dress-code">Дресс-код</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Виолетта и Сергей</h1>
+        <p class="date">12 апреля 2024</p>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2>Наши фотографии</h2>
+        <div class="gallery-carousel">
+            <button class="carousel-button prev">❮</button>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal(0)">
+                    <img src="images/photo1.jpg" alt="Фото 1">
+                </div>
+                <div class="gallery-item" onclick="openModal(1)">
+                    <img src="images/photo2.jpg" alt="Фото 2">
+                </div>
+                <div class="gallery-item" onclick="openModal(2)">
+                    <img src="images/photo3.jpg" alt="Фото 3">
+                </div>
+                <div class="gallery-item hidden" onclick="openModal(3)">
+                    <img src="images/photo4.jpg" alt="Фото 4">
+                </div>
+                <div class="gallery-item hidden" onclick="openModal(4)">
+                    <img src="images/photo5.jpg" alt="Фото 5">
+                </div>
+                <div class="gallery-item hidden" onclick="openModal(5)">
+                    <img src="images/photo6.jpg" alt="Фото 6">
+                </div>
+                <div class="gallery-item hidden" onclick="openModal(5)">
+                    <img src="images/photo7.jpg" alt="Фото 6">
+                </div>
+                <div class="gallery-item hidden" onclick="openModal(5)">
+                    <img src="images/photo8.jpg" alt="Фото 6">
+                </div>
+                <div class="gallery-item hidden" onclick="openModal(5)">
+                    <img src="images/photo9.jpg" alt="Фото 6">
+                </div>
+                <div class="gallery-item hidden" onclick="openModal(5)">
+                    <img src="images/photo10.jpg" alt="Фото 6">
+                </div>
+            </div>
+            <button class="carousel-button next">❯</button>
+        </div>
+    </section>
+
+    <!-- Модальное окно для просмотра фотографий -->
+    <div id="photoModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <button class="modal-button prev" onclick="changeSlide(-1)">❮</button>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Фото в полном размере">
+        </div>
+        <button class="modal-button next" onclick="changeSlide(1)">❯</button>
+    </div>
+
+    <section id="venue" class="venue">
+        <h2 class="venue-title">Место проведения</h2>
+        <div class="venue-details">
+            <div class="venue-card ceremony">
+                <div class="venue-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                </div>
+                <h3>Церемония</h3>
+                <div class="venue-info">
+                    <div class="info-item">
+                        <span class="info-label">Место</span>
+                        <p class="info-text">ЗАГС</p>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Адрес</span>
+                        <p class="info-text">ул. Киевская д. 115</p>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Время</span>
+                        <p class="info-text">11:20</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="venue-card reception">
+                <div class="venue-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+                    </svg>
+                </div>
+                <h3>Праздничный банкет</h3>
+                <div class="venue-info">
+                    <div class="info-item">
+                        <span class="info-label">Место</span>
+                        <p class="info-text">Beyaz Hall</p>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Адрес</span>
+                        <p class="info-text">ул. Беспалова, д.172</p>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Время</span>
+                        <p class="info-text">17:20</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dress-code" class="dress-code">
+        <h2 class="dress-code-title">Dress Code</h2>
+        <div class="dress-code-content">
+            <div class="dress-code-item ladies">
+                <h3>Для дам</h3>
+                <div class="dress-examples">
+                    <div class="dress-images">
+                        <img src="images/beige_women_dress.jpeg" alt="Вечернее платье 1">
+                        <img src="images/black_women_dress.jpg" alt="Вечернее платье 2">
+                        <img src="images/brown_women_dress.jpg" alt="Вечернее платье 3">
+                    </div>
+                </div>
+                <div class="color-palette">
+                    <h4>Палитра цветов</h4>
+                    <div class="colors">
+                        <div class="color-item" style="background-color: #000000;"></div>
+                        <div class="color-item" style="background-color: #654321;"></div>
+                        <div class="color-item" style="background-color: #C19A6B;"></div>
+                        <div class="color-item" style="background-color: #006B54;"></div>
+                        <div class="color-item" style="background-color: #8B8B7A;"></div>
+                        <div class="color-item" style="background-color: #4F4F4F;"></div>
+                    </div>
+                </div>
+                <p class="dress-description">Вечерние платья в пол или длины миди в элегантном стиле</p>
+            </div>
+            
+            <div class="dress-code-item gentlemen">
+                <h3>Для господ</h3>
+                <div class="dress-examples">
+                    <div class="dress-images">
+                        <img src="images/gray_man_costum.jpg" alt="Костюм 1">
+                        <img src="images/black_men_costum.jpg" alt="Костюм 2">
+                        <img src="images/brown_men_costum.jpg" alt="Костюм 3">
+                    </div>
+                </div>
+                <div class="color-palette">
+                    <h4>Палитра цветов</h4>
+                    <div class="colors">
+                        <div class="color-item" style="background-color: #000000;"></div>
+                        <div class="color-item" style="background-color: #4F4F4F;"></div>
+                        <div class="color-item" style="background-color: #654321;"></div>
+                        <div class="color-item" style="background-color: #C19A6B;"></div>
+                        <div class="color-item" style="background-color: #8B8B7A;"></div>
+                    </div>
+                </div>
+                <p class="dress-description">Классический костюм с галстуком или бабочкой</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>С нетерпением ждем встречи с вами!</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html> 
