@@ -147,4 +147,23 @@ function updateActiveMenuItem() {
 }
 
 // Обновляем активный пункт меню при скролле
-window.addEventListener('scroll', updateActiveMenuItem); 
+window.addEventListener('scroll', updateActiveMenuItem);
+
+let lastScrollTop = 0;
+const nav = document.querySelector('nav');
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > lastScrollTop) {
+        // Скролл вниз
+        nav.classList.remove('header-pin');
+        nav.classList.add('header-unpin');
+    } else {
+        // Скролл вверх
+        nav.classList.remove('header-unpin');
+        nav.classList.add('header-pin');
+    }
+    
+    lastScrollTop = scrollTop;
+}); 

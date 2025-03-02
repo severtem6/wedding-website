@@ -18,6 +18,7 @@ nav {
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
 }
 
 .nav-container {
@@ -469,6 +470,7 @@ footer {
 }
 .survey{
     text-align: center;
+    background-color: #faf9f8;
 }
 a{
     text-decoration: none;
@@ -477,4 +479,16 @@ a{
     font-size: 3rem;
     color: #C19A6B;
     font-family: 'Playfair Display', serif;
+    background-color: #faf9f8;
 }
+
+.header-pin {
+    transform: translateY(0);
+}
+
+.header-unpin {
+    transform: translateY(-100%);
+}
+
+
+
