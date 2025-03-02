@@ -47,7 +47,7 @@ nav a.active {
 /* Главный экран */
 .hero {
     height: 100vh;
-    background: url('images/') center/cover;
+    background: url('images/back.jpg') center/cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -60,6 +60,7 @@ nav a.active {
 .hero h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
+    padding-top: 500px;
 }
 
 .hero .date {
@@ -465,4 +466,15 @@ footer {
         font-size: 2rem;
         margin-bottom: 2rem;
     }
-} 
+}
+.survey{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 3rem;
+    color: #C19A6B;
+    font-family: 'Playfair Display', serif;
+}
