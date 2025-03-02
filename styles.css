@@ -482,13 +482,5 @@ a{
     background-color: #faf9f8;
 }
 
-.header-pin {
-    transform: translateY(0);
-}
-
-.header-unpin {
-    transform: translateY(-100%);
-}
-
 
 
